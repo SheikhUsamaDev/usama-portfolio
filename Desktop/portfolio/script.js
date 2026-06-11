@@ -407,27 +407,13 @@ function initScrollAnimations() {
         });
     });
 
-    // --- HORIZONTAL SCROLL PROJECTS ---
-    const track = document.querySelector('.projects-horizontal-track');
-    const wrapper = document.querySelector('.projects-horizontal-wrapper');
-    const allowHorizontalProjects = window.matchMedia('(min-width: 901px)').matches;
-    if (track && wrapper && allowHorizontalProjects) {
-        const totalScroll = track.scrollWidth - wrapper.clientWidth;
-        if (totalScroll > 0) {
-            gsap.to(track, {
-                x: -totalScroll,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: '#projects',
-                    start: 'top 20%',
-                    end: () => `+=${totalScroll}`,
-                    pin: true,
-                    scrub: 1.2,
-                    invalidateOnRefresh: true,
-                },
-            });
-        }
-    }
+    // --- Project cards scroll reveal ---
+    gsap.utils.toArray('.project-card-cinema').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: { trigger: card, start: 'top 88%' },
+            opacity: 0, y: 40, duration: 0.6, delay: i * 0.06, ease: 'power3.out',
+        });
+    });
 
     // --- Timeline ---
     const timelineFill = document.querySelector('.timeline-line-fill');
