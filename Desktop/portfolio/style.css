@@ -130,12 +130,12 @@ textarea:focus-visible,
     height: 100%;
 }
 .preloader-glitch::before {
-    color: var(--cyan-accent);
+    color: var(--primary);
     clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
     animation: glitchTop 2.5s ease-in-out infinite;
 }
 .preloader-glitch::after {
-    color: var(--blue-primary);
+    color: var(--cyan-accent);
     clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
     animation: glitchBottom 2.5s ease-in-out infinite;
 }
@@ -154,8 +154,8 @@ textarea:focus-visible,
 }
 @keyframes glitchText {
     0%, 85%, 100% { text-shadow: none; }
-    87% { text-shadow: -3px 0 var(--cyan-accent), 3px 0 var(--blue-primary); }
-    89% { text-shadow: 3px 0 var(--cyan-accent), -3px 0 var(--blue-primary); }
+    87% { text-shadow: -3px 0 var(--primary), 3px 0 var(--cyan-accent); }
+    89% { text-shadow: 3px 0 var(--primary), -3px 0 var(--cyan-accent); }
     91% { text-shadow: none; }
 }
 
@@ -263,9 +263,9 @@ textarea:focus-visible,
 }
 #navbar.scrolled {
     padding: 10px 0;
-    background: rgba(5, 6, 9, 0.9);
+    background: rgba(11, 15, 26, 0.92);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
 }
 .nav-container {
     max-width: 1200px;
@@ -309,12 +309,18 @@ textarea:focus-visible,
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--cyan-accent);
+    background: var(--primary);
     transition: width 0.4s var(--ease-out);
 }
 .nav-link:hover, .nav-link.active { color: var(--text-primary); }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-.nav-link.active { text-shadow: 0 0 15px rgba(0, 212, 255, 0.3); }
+.nav-link.active {
+    color: var(--text-primary);
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 6px;
+    padding: 4px 10px;
+    text-shadow: none;
+}
 
 .nav-toggle {
     display: none;
@@ -357,7 +363,7 @@ textarea:focus-visible,
     justify-content: center;
 }
 .mobile-menu.open .mobile-link { opacity: 1; transform: translateY(0); }
-.mobile-link:hover { color: var(--cyan-accent); }
+.mobile-link:hover { color: var(--primary-light); }
 .mobile-menu.open .mobile-link:nth-child(1) { transition-delay: 0.1s; }
 .mobile-menu.open .mobile-link:nth-child(2) { transition-delay: 0.15s; }
 .mobile-menu.open .mobile-link:nth-child(3) { transition-delay: 0.2s; }
