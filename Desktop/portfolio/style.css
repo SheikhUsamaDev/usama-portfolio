@@ -37,7 +37,7 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-::selection { background: rgba(0, 102, 255, 0.3); color: var(--cyan-accent); }
+::selection { background: rgba(99, 102, 241, 0.3); color: var(--cyan-accent); }
 
 html {
     scrollbar-width: thin;
@@ -832,12 +832,12 @@ textarea:focus-visible,
     filter: saturate(0.95) contrast(1.05);
 }
 .about-image-border {
-    position: absolute; inset: -3px; border-radius: 8px;
+    position: absolute; inset: -3px; border-radius: var(--card-radius);
     background: var(--gradient-primary); z-index: 1; opacity: 0.4;
     transform: translateZ(12px);
 }
 .about-image-glow {
-    position: absolute; inset: -18px; border-radius: 8px;
+    position: absolute; inset: -18px; border-radius: var(--card-radius);
     background: linear-gradient(135deg, rgba(53,208,194,0.14), transparent 70%);
     z-index: 0; filter: blur(25px);
     transform: translateZ(-32px) scale(1.08);
@@ -1421,7 +1421,7 @@ textarea:focus-visible,
         padding: 10px;
         background: rgba(255,255,255,0.035);
         border: 1px solid var(--border-color);
-        border-radius: 8px;
+        border-radius: var(--card-radius);
     }
     .section { padding: 44px 0; }
     .section-header { margin-bottom: 18px; }
