@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USAMA | AI Automation, Web Development & MS365 Expert</title>
+    <meta name="description" content="AI automation, web development, Zapier, Make.com, n8n, server handling, MS365 GCC High, Azure, and tenant migration services.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- GSAP Full Suite -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== CINEMATIC PRELOADER ========== -->
+    <div id="preloader">
+        <div class="preloader-letterbox top"></div>
+        <div class="preloader-letterbox bottom"></div>
+        <div class="preloader-center">
+            <div class="preloader-glitch" data-text="USAMA">USAMA</div>
+            <div class="preloader-subtitle">FULL STACK DEVELOPER</div>
+            <div class="preloader-loading">
+                <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+                <span class="preloader-percent">0%</span>
+            </div>
+        </div>
+        <div class="preloader-flash"></div>
+    </div>
+
+    <!-- ========== FILM OVERLAYS ========== -->
+    <div class="film-grain"></div>
+    <div class="vignette"></div>
+    <div class="lens-flare" id="lensFlare"></div>
+    <div class="cinematic-bars">
+        <div class="cine-bar cine-bar-top"></div>
+        <div class="cine-bar cine-bar-bottom"></div>
+    </div>
+
+    <!-- ========== 3D CANVAS ========== -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- ========== CUSTOM CURSOR ========== -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Usama</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Journey</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#skills" class="mobile-link">Skills</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#experience" class="mobile-link">Journey</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </div>
+
+    <!-- ========== SCENE 1: HERO ========== -->
+    <section id="hero">
+        <div class="hero-depth-layer hero-layer-1"></div>
+        <div class="hero-depth-layer hero-layer-2"></div>
+        <div class="section-depth-plane depth-plane-a"></div>
+        <div class="section-depth-plane depth-plane-b"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>Available for opportunities</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="char-reveal">Hi, I'm</span>
+                <br>
+                <span class="hero-name">
+                    <span class="char-reveal-name">U</span><span class="char-reveal-name">s</span><span class="char-reveal-name">a</span><span class="char-reveal-name">m</span><span class="char-reveal-name">a</span>
+                </span>
+            </h1>
+            <div class="hero-roles">
+                <div class="role-typewriter">
+                    <span class="typewriter-prefix">&gt;&nbsp;</span>
+                    <span id="typewriter" class="typewriter-text"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+            </div>
+            <p class="hero-description">
+                Building modern web experiences and business automation with
+                <span class="highlight">3 years</span> of expertise in
+                <span class="highlight">AI Automation</span>,
+                <span class="highlight">Zapier / Make / n8n</span>,
+                <span class="highlight">MS365 GCC High</span>, and
+                <span class="highlight">Tenant Migration</span>.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="https://wa.me/923079707175" class="btn btn-outline" target="_blank" rel="noopener">
+                    <span>Let's Talk</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+                <a href="mailto:usamasaeed4381@gmail.com?subject=CV%20Request" class="btn btn-glass">
+                    <span>Request CV</span>
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="30">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+        <div class="hero-socials">
+            <a href="mailto:usamasaeed4381@gmail.com" class="social-link" aria-label="Email Usama"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/923079707175" class="social-link" aria-label="WhatsApp Usama" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+            <a href="tel:+923079707175" class="social-link" aria-label="Call Usama"><i class="fas fa-phone"></i></a>
+        </div>
+    </section>
+
+    <!-- ========== SCENE 2: ABOUT ========== -->
+    <section id="about" class="section cinematic-section">
+        <div class="section-reveal-curtain"></div>
+        <div class="section-depth-plane depth-plane-a"></div>
+        <div class="section-depth-plane depth-plane-b"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title cinema-text">About <span class="gradient-text">Me</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid depth-stage">
+                <div class="about-image-wrapper">
+                    <div class="about-image-container">
+                        <div class="about-image-placeholder">
+                            <img src="assets/usama-profile.jpg" alt="Usama Saeed" class="profile-photo" width="1000" height="1200" loading="lazy">
+                        </div>
+                        <div class="about-image-border"></div>
+                        <div class="about-image-glow"></div>
+                    </div>
+                    <div class="about-floating-card card-1">
+                        <i class="fas fa-code"></i>
+                        <span>Clean Code</span>
+                    </div>
+                    <div class="about-floating-card card-2">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud Expert</span>
+                    </div>
+                    <div class="about-floating-card card-3">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Powered</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div class="about-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">about-usama.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="terminal-line"><span class="terminal-prompt">$</span> cat about.txt</p>
+                            <p class="terminal-output">
+                                I'm a passionate Full Stack Developer with 3+ years of experience
+                                building modern, scalable web applications. My expertise spans
+                                front-end and back-end technologies, cloud infrastructure, and enterprise solutions.
+                            </p>
+                            <br>
+                            <p class="terminal-output">
+                                Beyond development, I'm an expert in Microsoft 365 Administration
+                                GCC High-ready Microsoft 365 tenants, Azure Cloud Services,
+                                server operations, and tenant migrations. I design automation
+                                systems with Zapier, Make.com, n8n, Claude, OpenAI, and custom APIs.
+                            </p>
+                            <br>
+                            <p class="terminal-line"><span class="terminal-prompt">$</span> echo $PASSION</p>
+                            <p class="terminal-output highlight-text">
+                                "Building digital experiences that make a difference."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="about-tags">
+                        <span class="tag">Problem Solver</span>
+                        <span class="tag">Team Player</span>
+                        <span class="tag">Fast Learner</span>
+                        <span class="tag">Detail Oriented</span>
+                        <span class="tag">Creative Thinker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SCENE 3: SKILLS ========== -->
+    <section id="skills" class="section cinematic-section">
+        <div class="section-reveal-curtain"></div>
+        <div class="section-depth-plane depth-plane-a"></div>
+        <div class="section-depth-plane depth-plane-b"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title cinema-text">Tech <span class="gradient-text">Stack</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle skills-intro">Production web apps, AI automation systems, Zapier / Make / n8n workflows, MS365 GCC High administration, tenant migrations, and server operations.</p>
+            </div>
+            <div class="skills-tabs">
+                <button class="skill-tab active" data-tab="fullstack"><i class="fas fa-layer-group"></i> Full Stack</button>
+                <button class="skill-tab" data-tab="ms365"><i class="fab fa-microsoft"></i> MS365 / GCC High</button>
+                <button class="skill-tab" data-tab="ai"><i class="fas fa-brain"></i> AI & Automation</button>
+                <button class="skill-tab" data-tab="delivery"><i class="fas fa-server"></i> Server & Delivery</button>
+            </div>
+            <div class="skills-content depth-stage">
+                <div class="skills-panel active" id="fullstack">
+                    <div class="skills-grid">
+                        <div class="skill-card" data-skill="95"><div class="skill-icon"><i class="fab fa-html5"></i></div><div class="skill-meta">Frontend</div><h4>HTML5</h4><div class="skill-bar"><div class="skill-fill" style="--fill:95%"></div></div></div>
+                        <div class="skill-card" data-skill="92"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div><div class="skill-meta">Frontend</div><h4>CSS3 / SASS</h4><div class="skill-bar"><div class="skill-fill" style="--fill:92%"></div></div></div>
+                        <div class="skill-card" data-skill="90"><div class="skill-icon"><i class="fab fa-js"></i></div><div class="skill-meta">Core</div><h4>JavaScript</h4><div class="skill-bar"><div class="skill-fill" style="--fill:90%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-code"></i></div><div class="skill-meta">Typed</div><h4>TypeScript</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="87"><div class="skill-icon"><i class="fab fa-react"></i></div><div class="skill-meta">UI</div><h4>React.js</h4><div class="skill-bar"><div class="skill-fill" style="--fill:87%"></div></div></div>
+                        <div class="skill-card" data-skill="83"><div class="skill-icon"><i class="fas fa-forward"></i></div><div class="skill-meta">Framework</div><h4>Next.js</h4><div class="skill-bar"><div class="skill-fill" style="--fill:83%"></div></div></div>
+                        <div class="skill-card" data-skill="90"><div class="skill-icon"><i class="fas fa-wind"></i></div><div class="skill-meta">Styling</div><h4>Tailwind CSS</h4><div class="skill-bar"><div class="skill-fill" style="--fill:90%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-universal-access"></i></div><div class="skill-meta">Quality</div><h4>Accessibility</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fab fa-node-js"></i></div><div class="skill-meta">Backend</div><h4>Node.js</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="83"><div class="skill-icon"><i class="fas fa-bolt"></i></div><div class="skill-meta">Backend</div><h4>Express.js</h4><div class="skill-bar"><div class="skill-fill" style="--fill:83%"></div></div></div>
+                        <div class="skill-card" data-skill="79"><div class="skill-icon"><i class="fas fa-plug"></i></div><div class="skill-meta">API</div><h4>REST APIs</h4><div class="skill-bar"><div class="skill-fill" style="--fill:79%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-user-shield"></i></div><div class="skill-meta">Security</div><h4>Auth / JWT</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-meta">Database</div><h4>MongoDB</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-table"></i></div><div class="skill-meta">Database</div><h4>PostgreSQL</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="78"><div class="skill-icon"><i class="fas fa-gauge-high"></i></div><div class="skill-meta">Quality</div><h4>Performance</h4><div class="skill-bar"><div class="skill-fill" style="--fill:78%"></div></div></div>
+                        <div class="skill-card" data-skill="91"><div class="skill-icon"><i class="fas fa-mobile-screen-button"></i></div><div class="skill-meta">Web</div><h4>Responsive Websites</h4><div class="skill-bar"><div class="skill-fill" style="--fill:91%"></div></div></div>
+                        <div class="skill-card" data-skill="86"><div class="skill-icon"><i class="fas fa-chart-line"></i></div><div class="skill-meta">Product</div><h4>SaaS Dashboards</h4><div class="skill-bar"><div class="skill-fill" style="--fill:86%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-sync-alt"></i></div><div class="skill-meta">API</div><h4>API Integrations</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fab fa-wordpress"></i></div><div class="skill-meta">CMS</div><h4>WordPress / CMS</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="79"><div class="skill-icon"><i class="fas fa-search"></i></div><div class="skill-meta">Growth</div><h4>SEO Basics</h4><div class="skill-bar"><div class="skill-fill" style="--fill:79%"></div></div></div>
+                        <div class="skill-card" data-skill="83"><div class="skill-icon"><i class="fas fa-cart-shopping"></i></div><div class="skill-meta">Commerce</div><h4>E-Commerce Builds</h4><div class="skill-bar"><div class="skill-fill" style="--fill:83%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skills-panel" id="ms365">
+                    <div class="skills-grid">
+                        <div class="skill-card" data-skill="92"><div class="skill-icon"><i class="fab fa-microsoft"></i></div><div class="skill-meta">Tenant</div><h4>Microsoft 365 Admin</h4><div class="skill-bar"><div class="skill-fill" style="--fill:92%"></div></div></div>
+                        <div class="skill-card" data-skill="88"><div class="skill-icon"><i class="fas fa-envelope"></i></div><div class="skill-meta">Workload</div><h4>Exchange Online</h4><div class="skill-bar"><div class="skill-fill" style="--fill:88%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-users-cog"></i></div><div class="skill-meta">Workload</div><h4>SharePoint Online</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-people-group"></i></div><div class="skill-meta">Workload</div><h4>Teams Admin</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-mobile-screen-button"></i></div><div class="skill-meta">Endpoint</div><h4>Intune</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-id-card"></i></div><div class="skill-meta">Identity</div><h4>Microsoft Entra ID</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="79"><div class="skill-icon"><i class="fas fa-lock"></i></div><div class="skill-meta">Security</div><h4>Conditional Access</h4><div class="skill-bar"><div class="skill-fill" style="--fill:79%"></div></div></div>
+                        <div class="skill-card" data-skill="81"><div class="skill-icon"><i class="fas fa-network-wired"></i></div><div class="skill-meta">API</div><h4>Microsoft Graph API</h4><div class="skill-bar"><div class="skill-fill" style="--fill:81%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-terminal"></i></div><div class="skill-meta">Automation</div><h4>Graph PowerShell</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="86"><div class="skill-icon"><i class="fas fa-cloud"></i></div><div class="skill-meta">Cloud</div><h4>Azure Administration</h4><div class="skill-bar"><div class="skill-fill" style="--fill:86%"></div></div></div>
+                        <div class="skill-card" data-skill="78"><div class="skill-icon"><i class="fas fa-key"></i></div><div class="skill-meta">Security</div><h4>Azure Key Vault</h4><div class="skill-bar"><div class="skill-fill" style="--fill:78%"></div></div></div>
+                        <div class="skill-card" data-skill="77"><div class="skill-icon"><i class="fas fa-server"></i></div><div class="skill-meta">Infra</div><h4>Virtual Machines</h4><div class="skill-bar"><div class="skill-fill" style="--fill:77%"></div></div></div>
+                        <div class="skill-card" data-skill="86"><div class="skill-icon"><i class="fas fa-shield-halved"></i></div><div class="skill-meta">Gov Cloud</div><h4>MS365 GCC High</h4><div class="skill-bar"><div class="skill-fill" style="--fill:86%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-exchange-alt"></i></div><div class="skill-meta">Migration</div><h4>Tenant-to-Tenant Migration</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="85"><div class="skill-icon"><i class="fas fa-envelope-open-text"></i></div><div class="skill-meta">Migration</div><h4>Exchange Migration</h4><div class="skill-bar"><div class="skill-fill" style="--fill:85%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-folder-open"></i></div><div class="skill-meta">Migration</div><h4>SharePoint / OneDrive</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="83"><div class="skill-icon"><i class="fas fa-users-cog"></i></div><div class="skill-meta">Identity</div><h4>Identity Mapping</h4><div class="skill-bar"><div class="skill-fill" style="--fill:83%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-list-check"></i></div><div class="skill-meta">Tenant</div><h4>License Management</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-scale-balanced"></i></div><div class="skill-meta">Compliance</div><h4>Microsoft Purview</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-route"></i></div><div class="skill-meta">Migration</div><h4>Cutover Planning</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skills-panel" id="ai">
+                    <div class="skills-grid">
+                        <div class="skill-card" data-skill="90"><div class="skill-icon"><i class="fas fa-robot"></i></div><div class="skill-meta">Models</div><h4>OpenAI / Claude APIs</h4><div class="skill-bar"><div class="skill-fill" style="--fill:90%"></div></div></div>
+                        <div class="skill-card" data-skill="86"><div class="skill-icon"><i class="fas fa-folder-tree"></i></div><div class="skill-meta">Claude</div><h4>Claude Skills</h4><div class="skill-bar"><div class="skill-fill" style="--fill:86%"></div></div></div>
+                        <div class="skill-card" data-skill="90"><div class="skill-icon"><i class="fas fa-bolt"></i></div><div class="skill-meta">No-Code</div><h4>Zapier Workflows</h4><div class="skill-bar"><div class="skill-fill" style="--fill:90%"></div></div></div>
+                        <div class="skill-card" data-skill="88"><div class="skill-icon"><i class="fas fa-diagram-project"></i></div><div class="skill-meta">Visual</div><h4>Make.com Scenarios</h4><div class="skill-bar"><div class="skill-fill" style="--fill:88%"></div></div></div>
+                        <div class="skill-card" data-skill="86"><div class="skill-icon"><i class="fas fa-network-wired"></i></div><div class="skill-meta">Self-Hosted</div><h4>n8n Automation</h4><div class="skill-bar"><div class="skill-fill" style="--fill:86%"></div></div></div>
+                        <div class="skill-card" data-skill="88"><div class="skill-icon"><i class="fas fa-magic"></i></div><div class="skill-meta">Agents</div><h4>AI Agents</h4><div class="skill-bar"><div class="skill-fill" style="--fill:88%"></div></div></div>
+                        <div class="skill-card" data-skill="88"><div class="skill-icon"><i class="fas fa-comment-dots"></i></div><div class="skill-meta">Prompting</div><h4>Prompt Engineering</h4><div class="skill-bar"><div class="skill-fill" style="--fill:88%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-toolbox"></i></div><div class="skill-meta">Tools</div><h4>Function Calling</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="81"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-meta">Knowledge</div><h4>Embeddings / RAG</h4><div class="skill-bar"><div class="skill-fill" style="--fill:81%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-plug"></i></div><div class="skill-meta">AI Tools</div><h4>MCP Workflows</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="85"><div class="skill-icon"><i class="fas fa-code-compare"></i></div><div class="skill-meta">Integrations</div><h4>Webhooks & APIs</h4><div class="skill-bar"><div class="skill-fill" style="--fill:85%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-user-check"></i></div><div class="skill-meta">Control</div><h4>Human-in-the-Loop</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-funnel-dollar"></i></div><div class="skill-meta">Revenue</div><h4>CRM / Lead Automation</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="83"><div class="skill-icon"><i class="fas fa-headset"></i></div><div class="skill-meta">Support</div><h4>AI Support Bots</h4><div class="skill-bar"><div class="skill-fill" style="--fill:83%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-file-lines"></i></div><div class="skill-meta">Data</div><h4>Structured Responses</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="79"><div class="skill-icon"><i class="fas fa-shield"></i></div><div class="skill-meta">Safety</div><h4>Guardrails</h4><div class="skill-bar"><div class="skill-fill" style="--fill:79%"></div></div></div>
+                        <div class="skill-card" data-skill="77"><div class="skill-icon"><i class="fas fa-flask"></i></div><div class="skill-meta">Quality</div><h4>Evals & Iteration</h4><div class="skill-bar"><div class="skill-fill" style="--fill:77%"></div></div></div>
+                    </div>
+                </div>
+                <div class="skills-panel" id="delivery">
+                    <div class="skills-grid">
+                        <div class="skill-card" data-skill="88"><div class="skill-icon"><i class="fab fa-git-alt"></i></div><div class="skill-meta">Source</div><h4>Git / GitHub</h4><div class="skill-bar"><div class="skill-fill" style="--fill:88%"></div></div></div>
+                        <div class="skill-card" data-skill="85"><div class="skill-icon"><i class="fab fa-docker"></i></div><div class="skill-meta">Container</div><h4>Docker</h4><div class="skill-bar"><div class="skill-fill" style="--fill:85%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-code-branch"></i></div><div class="skill-meta">Delivery</div><h4>CI/CD</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="81"><div class="skill-icon"><i class="fas fa-layer-group"></i></div><div class="skill-meta">Automation Ops</div><h4>n8n Queue Mode</h4><div class="skill-bar"><div class="skill-fill" style="--fill:81%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-meta">Automation Ops</div><h4>Redis / Postgres</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="81"><div class="skill-icon"><i class="fas fa-cloud-arrow-up"></i></div><div class="skill-meta">Deploy</div><h4>Vercel / Azure</h4><div class="skill-bar"><div class="skill-fill" style="--fill:81%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-code"></i></div><div class="skill-meta">Editor</div><h4>VS Code</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="78"><div class="skill-icon"><i class="fab fa-figma"></i></div><div class="skill-meta">Design</div><h4>Figma</h4><div class="skill-bar"><div class="skill-fill" style="--fill:78%"></div></div></div>
+                        <div class="skill-card" data-skill="84"><div class="skill-icon"><i class="fas fa-server"></i></div><div class="skill-meta">Servers</div><h4>VPS Handling</h4><div class="skill-bar"><div class="skill-fill" style="--fill:84%"></div></div></div>
+                        <div class="skill-card" data-skill="83"><div class="skill-icon"><i class="fab fa-linux"></i></div><div class="skill-meta">OS</div><h4>Linux Server Admin</h4><div class="skill-bar"><div class="skill-fill" style="--fill:83%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fab fa-windows"></i></div><div class="skill-meta">OS</div><h4>Windows Server</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                        <div class="skill-card" data-skill="82"><div class="skill-icon"><i class="fas fa-globe"></i></div><div class="skill-meta">Web Server</div><h4>Nginx / Apache</h4><div class="skill-bar"><div class="skill-fill" style="--fill:82%"></div></div></div>
+                        <div class="skill-card" data-skill="85"><div class="skill-icon"><i class="fas fa-lock"></i></div><div class="skill-meta">Web Ops</div><h4>DNS / SSL Setup</h4><div class="skill-bar"><div class="skill-fill" style="--fill:85%"></div></div></div>
+                        <div class="skill-card" data-skill="79"><div class="skill-icon"><i class="fas fa-chart-line"></i></div><div class="skill-meta">Ops</div><h4>Monitoring</h4><div class="skill-bar"><div class="skill-fill" style="--fill:79%"></div></div></div>
+                        <div class="skill-card" data-skill="81"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-meta">Recovery</div><h4>Backups & Restore</h4><div class="skill-bar"><div class="skill-fill" style="--fill:81%"></div></div></div>
+                        <div class="skill-card" data-skill="80"><div class="skill-icon"><i class="fas fa-user-shield"></i></div><div class="skill-meta">Security</div><h4>Server Hardening</h4><div class="skill-bar"><div class="skill-fill" style="--fill:80%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-actions">
+                <button type="button" class="btn btn-glass" id="skillsLoadMore">
+                    <span>Load More Skills</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SCENE 4: SERVICES ========== -->
+    <section id="services" class="section cinematic-section">
+        <div class="section-reveal-curtain"></div>
+        <div class="section-depth-plane depth-plane-a"></div>
+        <div class="section-depth-plane depth-plane-b"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title cinema-text">What I <span class="gradient-text">Offer</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid depth-stage">
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="service-number">01</div>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Modern websites, landing pages, dashboards, e-commerce builds, API integrations, and responsive front-end experiences.</p>
+                    <div class="service-tags"><span>React</span><span>Next.js</span><span>Node.js</span><span>CMS</span></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon"><i class="fas fa-robot"></i></div>
+                        <div class="service-number">02</div>
+                    </div>
+                    <h3>AI Automation Systems</h3>
+                    <p>AI agents, RAG workflows, structured AI outputs, support bots, lead routing, content automation, and human approval flows.</p>
+                    <div class="service-tags"><span>OpenAI</span><span>Claude</span><span>RAG</span><span>Agents</span></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon"><i class="fas fa-diagram-project"></i></div>
+                        <div class="service-number">03</div>
+                    </div>
+                    <h3>Zapier, Make.com & n8n</h3>
+                    <p>No-code and low-code automation with multi-step workflows, webhooks, API calls, data routing, monitoring, and error handling.</p>
+                    <div class="service-tags"><span>Zapier</span><span>Make.com</span><span>n8n</span><span>Webhooks</span></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon"><i class="fab fa-microsoft"></i></div>
+                        <div class="service-number">04</div>
+                    </div>
+                    <h3>MS365 & GCC High</h3>
+                    <p>Microsoft 365 tenant administration, GCC High readiness, Entra ID, Exchange, Teams, SharePoint, Intune, Purview, and security policies.</p>
+                    <div class="service-tags"><span>GCC High</span><span>Entra ID</span><span>Exchange</span><span>Purview</span></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="service-number">05</div>
+                    </div>
+                    <h3>Tenant Migration</h3>
+                    <p>Tenant-to-tenant planning, identity mapping, mailbox migration, SharePoint and OneDrive moves, cutover support, and post-migration cleanup.</p>
+                    <div class="service-tags"><span>Exchange</span><span>OneDrive</span><span>SharePoint</span><span>Cutover</span></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon"><i class="fas fa-server"></i></div>
+                        <div class="service-number">06</div>
+                    </div>
+                    <h3>Server & Cloud Handling</h3>
+                    <p>VPS setup, Linux and Windows server handling, Docker deployment, DNS, SSL, backups, monitoring, and security hardening.</p>
+                    <div class="service-tags"><span>VPS</span><span>Docker</span><span>DNS</span><span>SSL</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SCENE 5: PROJECTS (Horizontal Scroll) ========== -->
+    <section id="projects" class="section cinematic-section">
+        <div class="section-reveal-curtain"></div>
+        <div class="section-depth-plane depth-plane-a"></div>
+        <div class="section-depth-plane depth-plane-b"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title cinema-text">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="section-line"></div>
+            </div>
+        </div>
+        <div class="projects-horizontal-wrapper depth-stage">
+            <div class="projects-horizontal-track">
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/ecommerce.svg" alt="E-commerce dashboard project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=E-Commerce%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Full Stack</div>
+                        <h3>E-Commerce Platform</h3>
+                        <p>Modern e-commerce with real-time inventory, payment processing, and admin dashboard.</p>
+                        <div class="project-tech"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/gcc-dashboard.svg" alt="Microsoft 365 GCC High dashboard project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=MS365%20GCC%20High%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">MS365 / GCC High</div>
+                        <h3>MS365 GCC High Dashboard</h3>
+                        <p>Tenant monitoring dashboard with Entra ID, Exchange, compliance alerts, user analytics, and security reporting.</p>
+                        <div class="project-tech"><span>React</span><span>Graph API</span><span>PowerShell</span><span>GCC High</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/ai-workflow.svg" alt="AI automation workflow project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=AI%20Automation%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">AI Automation</div>
+                        <h3>AI Automation Workflow Hub</h3>
+                        <p>Connected Zapier, Make.com, n8n, OpenAI, Claude, CRM routing, support bots, and webhook-based business workflows.</p>
+                        <div class="project-tech"><span>Claude</span><span>Make.com</span><span>n8n</span><span>OpenAI</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/tenant-migration.svg" alt="Tenant migration runbook project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=Tenant%20Migration%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Migration & Ops</div>
+                        <h3>Tenant Migration Runbook</h3>
+                        <p>Tenant-to-tenant migration plan with identity mapping, Exchange, SharePoint, OneDrive, DNS cutover, and validation steps.</p>
+                        <div class="project-tech"><span>MS365</span><span>Entra ID</span><span>PowerShell</span><span>DNS</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/crm-automation.svg" alt="CRM lead automation project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=CRM%20Lead%20Automation%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Automation</div>
+                        <h3>CRM Lead Automation</h3>
+                        <p>Automated lead capture, scoring, assignment, follow-up reminders, and CRM updates from forms, ads, and inbox sources.</p>
+                        <div class="project-tech"><span>Zapier</span><span>Make.com</span><span>CRM</span><span>Webhooks</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/n8n-server.svg" alt="n8n automation server project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=n8n%20Server%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Self-Hosted Automation</div>
+                        <h3>n8n Automation Server</h3>
+                        <p>Self-hosted n8n setup with Docker, queue-ready architecture, credential handling, webhook workflows, and monitoring.</p>
+                        <div class="project-tech"><span>n8n</span><span>Docker</span><span>Redis</span><span>Postgres</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/claude-assistant.svg" alt="Claude AI support assistant project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=AI%20Support%20Bot%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">AI Support</div>
+                        <h3>Claude Skills Support Assistant</h3>
+                        <p>Custom Claude Skills assistant for support teams with reusable instructions, knowledge-base answers, ticket drafts, and escalation guardrails.</p>
+                        <div class="project-tech"><span>Claude Skills</span><span>RAG</span><span>Next.js</span><span>Helpdesk</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/server-hardening.svg" alt="Server hardening project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=Security%20Hardening%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Server Ops</div>
+                        <h3>Server Hardening Package</h3>
+                        <p>Production server setup with firewall rules, SSL, backups, uptime monitoring, deployment workflow, and recovery checks.</p>
+                        <div class="project-tech"><span>Linux</span><span>Nginx</span><span>SSL</span><span>Backups</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/compliance.svg" alt="Microsoft Purview compliance workflow project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=Compliance%20Automation%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">Compliance</div>
+                        <h3>Purview Compliance Workflow</h3>
+                        <p>Compliance workflow for Microsoft 365 with retention checks, reporting, policy review tasks, and admin handoff notes.</p>
+                        <div class="project-tech"><span>Purview</span><span>MS365</span><span>Graph</span><span>Reports</span></div>
+                    </div>
+                </div>
+                <div class="project-card-cinema">
+                    <div class="project-image">
+                        <img src="assets/projects/analytics-dashboard.svg" alt="Operations analytics dashboard project preview" class="project-thumb" width="800" height="450" loading="lazy">
+                        <div class="project-overlay"><div class="project-links"><a href="#contact" class="project-link" aria-label="Discuss this project"><i class="fas fa-paper-plane"></i></a><a href="mailto:usamasaeed4381@gmail.com?subject=SaaS%20Dashboard%20Project" class="project-link" aria-label="Email about this project"><i class="fas fa-envelope"></i></a></div></div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category">SaaS Dashboard</div>
+                        <h3>Operations Analytics Dashboard</h3>
+                        <p>Responsive dashboard for service metrics, workload status, automation health, client activity, and admin actions.</p>
+                        <div class="project-tech"><span>React</span><span>Charts</span><span>API</span><span>Auth</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SCENE 6: EXPERIENCE ========== -->
+    <section id="experience" class="section cinematic-section">
+        <div class="section-reveal-curtain"></div>
+        <div class="section-depth-plane depth-plane-a"></div>
+        <div class="section-depth-plane depth-plane-b"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title cinema-text">My <span class="gradient-text">Journey</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline depth-stage">
+                <div class="timeline-line"><div class="timeline-line-fill"></div></div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><div class="timeline-dot-inner"></div><div class="timeline-dot-pulse"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2023 - Present</div>
+                        <h3>Full Stack Developer</h3>
+                        <p class="timeline-company">Freelance / Contract</p>
+                        <p>Building web applications, AI automations, Zapier / Make / n8n workflows, MS365 GCC High tenant operations, server deployments, and tenant migration plans for clients.</p>
+                        <div class="timeline-tags"><span>AI Automation</span><span>Web Dev</span><span>MS365 GCC High</span><span>Migration</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><div class="timeline-dot-inner"></div><div class="timeline-dot-pulse"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2022 - 2023</div>
+                        <h3>Web Developer</h3>
+                        <p class="timeline-company">Tech Company</p>
+                        <p>Developed and maintained web applications, collaborated with design teams, and optimized application performance.</p>
+                        <div class="timeline-tags"><span>JavaScript</span><span>React</span><span>REST APIs</span></div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"><div class="timeline-dot-inner"></div><div class="timeline-dot-pulse"></div></div>
+                    <div class="timeline-card">
+                        <div class="timeline-date">2021 - 2022</div>
+                        <h3>Junior Developer</h3>
+                        <p class="timeline-company">Startup</p>
+                        <p>Started my development journey, learning modern web technologies and contributing to team projects.</p>
+                        <div class="timeline-tags"><span>HTML/CSS</span><span>JavaScript</span><span>Git</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SCENE 7: CONTACT ========== -->
+    <section id="contact" class="section cinematic-section">
+        <div class="section-reveal-curtain"></div>
+        <div class="section-depth-plane depth-plane-a"></div>
+        <div class="section-depth-plane depth-plane-b"></div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title cinema-text">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Have a project in mind? Let's build something amazing together.</p>
+            </div>
+            <div class="contact-grid depth-stage">
+                <div class="contact-info">
+                    <div class="contact-card"><div class="contact-icon"><i class="fas fa-envelope"></i></div><div><h4>Email</h4><a href="mailto:usamasaeed4381@gmail.com">usamasaeed4381@gmail.com</a></div></div>
+                    <div class="contact-card"><div class="contact-icon"><i class="fab fa-whatsapp"></i></div><div><h4>WhatsApp / Phone</h4><a href="https://wa.me/923079707175" target="_blank" rel="noopener">0307 9707175</a></div></div>
+                    <div class="contact-card"><div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div><div><h4>Location</h4><span>Available Worldwide (Remote)</span></div></div>
+                    <div class="contact-card"><div class="contact-icon"><i class="fas fa-clock"></i></div><div><h4>Availability</h4><span>Open for freelance & full-time</span></div></div>
+                    <div class="contact-socials">
+                        <a href="mailto:usamasaeed4381@gmail.com" class="contact-social-link" aria-label="Email Usama"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/923079707175" class="contact-social-link" aria-label="WhatsApp Usama" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                        <a href="tel:+923079707175" class="contact-social-link" aria-label="Call Usama"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/usamasaeed4381@gmail.com" data-endpoint="https://formsubmit.co/ajax/usamasaeed4381@gmail.com" method="POST">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off">
+                    <div class="form-group"><input type="text" id="name" name="name" required placeholder=" "><label for="name">Your Name</label><div class="form-line"></div></div>
+                    <div class="form-group"><input type="email" id="email" name="email" required placeholder=" "><label for="email">Your Email</label><div class="form-line"></div></div>
+                    <div class="form-group"><input type="text" id="subject" name="subject" required placeholder=" "><label for="subject">Subject</label><div class="form-line"></div></div>
+                    <div class="form-group"><textarea id="message" name="message" rows="5" required placeholder=" "></textarea><label for="message">Your Message</label><div class="form-line"></div></div>
+                    <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
+                    <button type="submit" class="btn btn-primary btn-full"><span>Send Message</span><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Usama</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+                <p class="footer-text">Designed & Built by Usama — A cinematic experience.</p>
+                <p class="footer-copyright">&copy; 2026 Usama. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+        <svg class="progress-ring" viewBox="0 0 50 50">
+            <circle class="progress-ring-bg" cx="25" cy="25" r="22"></circle>
+            <circle class="progress-ring-fill" cx="25" cy="25" r="22"></circle>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
