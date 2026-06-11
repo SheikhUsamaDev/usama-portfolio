@@ -1026,14 +1026,14 @@ textarea:focus-visible,
 .service-icon-wrapper { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; position: relative; z-index: 1; }
 .service-icon {
     width: 56px; height: 56px;
-    background: rgba(0,102,255,0.1);
-    border: 1px solid rgba(0,102,255,0.2);
+    background: rgba(99,102,241,0.1);
+    border: 1px solid rgba(99,102,241,0.2);
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     font-size: 1.4rem; color: var(--primary);
     transition: all 0.3s;
 }
-.service-card:hover .service-icon { background: var(--primary); color: #fff; box-shadow: 0 4px 20px rgba(0,102,255,0.4); }
+.service-card:hover .service-icon { background: var(--primary); color: #fff; box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
 .service-web .service-icon { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.2); color: var(--primary); }
 .service-ai .service-icon { background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.2); color: var(--cyan-accent); }
 .service-zapier .service-icon { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.2); color: var(--violet-accent); }
@@ -1046,8 +1046,8 @@ textarea:focus-visible,
 .service-tags { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; }
 .service-tags span {
     padding: 4px 12px;
-    background: rgba(0,102,255,0.06);
-    border: 1px solid rgba(0,102,255,0.12);
+    background: rgba(99,102,241,0.06);
+    border: 1px solid rgba(99,102,241,0.12);
     border-radius: 6px;
     font-size: 0.72rem; font-weight: 500; color: var(--primary-light);
 }
@@ -1264,7 +1264,7 @@ textarea:focus-visible,
     font-family: var(--font-primary); font-size: 0.95rem;
     outline: none; transition: all 0.3s;
 }
-.form-group input:focus, .form-group textarea:focus { background: rgba(0,102,255,0.02); border-bottom-color: var(--primary); }
+.form-group input:focus, .form-group textarea:focus { background: rgba(99,102,241,0.02); border-bottom-color: var(--primary); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 .form-group label {
     position: absolute; left: 0; top: 16px;
@@ -1316,7 +1316,7 @@ textarea:focus-visible,
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { border-color: var(--primary); box-shadow: 0 0 25px rgba(99,102,241,0.2); transform: translateY(-3px); }
 .back-to-top .progress-ring { position: absolute; inset: -1px; width: calc(100% + 2px); height: calc(100% + 2px); transform: rotate(-90deg); pointer-events: none; }
-.progress-ring-bg { fill: none; stroke: rgba(0,102,255,0.08); stroke-width: 2; }
+.progress-ring-bg { fill: none; stroke: rgba(99,102,241,0.08); stroke-width: 2; }
 .progress-ring-fill { fill: none; stroke: var(--primary); stroke-width: 2; stroke-dasharray: 138.23; stroke-dashoffset: 138.23; stroke-linecap: round; }
 
 /* ============ RESPONSIVE ============ */
@@ -1440,6 +1440,7 @@ textarea:focus-visible,
     .section { padding: 44px 0; }
     .section-header { margin-bottom: 18px; }
     .skills-grid { grid-template-columns: 1fr; gap: 10px; }
+    .skill-card.skill-featured { grid-column: span 1; }
     .skill-tab { padding: 8px 14px; font-size: 0.78rem; }
     .hero-cta { flex-direction: column; align-items: center; }
     .btn { width: 100%; justify-content: center; }
