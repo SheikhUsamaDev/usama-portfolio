@@ -823,7 +823,7 @@ textarea:focus-visible,
 }
 .about-image-glow {
     position: absolute; inset: -18px; border-radius: var(--card-radius);
-    background: linear-gradient(135deg, rgba(53,208,194,0.14), transparent 70%);
+    background: linear-gradient(135deg, rgba(99,102,241,0.18), transparent 70%);
     z-index: 0; filter: blur(25px);
     transform: translateZ(-32px) scale(1.08);
 }
@@ -832,16 +832,18 @@ textarea:focus-visible,
     position: absolute;
     display: flex; align-items: center; gap: 8px;
     padding: 10px 18px;
-    background: var(--bg-glass);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: var(--card-radius);
     font-size: 0.85rem; font-weight: 600;
     z-index: 3;
     animation: float 6s ease-in-out infinite;
-    box-shadow: var(--shadow-blue);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
 }
-.about-floating-card i { color: var(--cyan-accent); }
+.about-floating-card.card-1 i { color: var(--primary-light); }
+.about-floating-card.card-2 i { color: var(--cyan-accent); }
+.about-floating-card.card-3 i { color: var(--violet-accent); }
 .card-1 { top: 10%; right: -10%; }
 .card-2 { bottom: 20%; left: -15%; animation-delay: 2s; }
 .card-3 { bottom: 5%; right: -5%; animation-delay: 4s; }
@@ -850,7 +852,7 @@ textarea:focus-visible,
 /* Terminal */
 .about-terminal {
     background: rgba(4, 8, 20, 0.85);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(99, 102, 241, 0.2);
     border-radius: var(--card-radius);
     overflow: hidden;
     backdrop-filter: blur(10px);
@@ -861,33 +863,33 @@ textarea:focus-visible,
 .terminal-header {
     display: flex; align-items: center; gap: 12px;
     padding: 12px 16px;
-    background: rgba(0,0,0,0.5);
-    border-bottom: 1px solid var(--border-color);
+    background: rgba(99, 102, 241, 0.04);
+    border-bottom: 1px solid rgba(99, 102, 241, 0.15);
 }
 .terminal-dots { display: flex; gap: 6px; }
 .dot { width: 10px; height: 10px; border-radius: 50%; }
 .dot.red { background: #ff5f57; } .dot.yellow { background: #ffbd2e; } .dot.green { background: #28c840; }
 .terminal-title { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
 .terminal-body { padding: 20px; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.8; }
-.terminal-prompt { color: var(--cyan-accent); margin-right: 8px; }
+.terminal-prompt { color: var(--primary-light); margin-right: 8px; }
 .terminal-line { color: var(--text-secondary); }
 .terminal-output { color: var(--text-secondary); padding-left: 20px; }
 .terminal-body,
 .terminal-output,
 .terminal-line { overflow-wrap: anywhere; }
-.highlight-text { color: var(--cyan-accent) !important; font-style: italic; }
+.highlight-text { color: var(--primary-light) !important; font-style: italic; }
 
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 .tag {
     padding: 6px 16px;
     background: var(--bg-glass);
     border: 1px solid var(--border-color);
-    border-radius: var(--card-radius);
+    border-radius: 100px;
     font-size: 0.8rem; font-weight: 500;
     color: var(--text-secondary);
     transition: all 0.3s;
 }
-.tag:hover { border-color: var(--blue-primary); color: var(--cyan-accent); }
+.tag:hover { border-color: var(--primary); color: var(--primary-light); background: rgba(99,102,241,0.08); }
 
 /* ============ SKILLS ============ */
 .skills-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
@@ -895,24 +897,37 @@ textarea:focus-visible,
 .skill-tab {
     display: flex; align-items: center; gap: 8px;
     padding: 10px 22px;
-    background: var(--bg-glass);
+    background: transparent;
     border: 1px solid var(--border-color);
-    border-radius: var(--card-radius);
+    border-radius: 100px;
     color: var(--text-secondary);
     font-family: var(--font-primary);
     font-size: 0.85rem; font-weight: 500;
     transition: all 0.3s;
     backdrop-filter: blur(10px);
     min-height: 44px;
+    cursor: pointer;
 }
-.skill-tab:hover { border-color: var(--blue-primary); color: var(--text-primary); }
-.skill-tab.active { background: rgba(0,102,255,0.12); border-color: var(--blue-primary); color: var(--cyan-accent); box-shadow: var(--shadow-blue); }
+.skill-tab:hover { border-color: var(--primary); color: var(--text-primary); }
+.skill-tab.active {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--primary);
+    color: var(--primary-light);
+    box-shadow: var(--shadow-blue);
+}
 
 .skills-panel { display: none; }
 .skills-panel.active { display: block; animation: fadeIn 0.5s var(--ease-out); }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 18px; }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+    gap: 16px;
+}
+.skill-card.skill-featured {
+    grid-column: span 2;
+}
 .skill-card {
     background: var(--gradient-surface), var(--bg-glass);
     border: 1px solid var(--border-color);
@@ -926,7 +941,13 @@ textarea:focus-visible,
     transform-style: preserve-3d;
     will-change: transform;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
-    min-height: 168px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
 }
 .skill-card.skill-hidden { display: none; }
 .skill-card::before {
@@ -935,36 +956,26 @@ textarea:focus-visible,
     background: var(--gradient-primary);
     opacity: 0; transition: opacity 0.3s;
 }
-.skill-card::after {
-    content: attr(data-skill) '%';
-    position: absolute; top: 8px; right: 12px;
-    font-family: var(--font-mono); font-size: 0.7rem;
-    color: var(--text-muted); opacity: 0; transition: all 0.3s;
-}
-.skill-card:hover { border-color: var(--blue-primary); transform: translateY(-5px); box-shadow: var(--shadow-blue); }
+.skill-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: var(--shadow-blue); }
 .skill-card:hover::before { opacity: 1; }
-.skill-card:hover::after { opacity: 1; color: var(--cyan-accent); }
-.skill-icon { font-size: 2rem; color: var(--blue-primary); margin-bottom: 12px; transition: all 0.3s; }
+.skill-card:hover .skill-icon { color: var(--cyan-accent); transform: scale(1.15); }
+.skill-icon { font-size: 2rem; color: var(--primary); margin-bottom: 8px; transition: all 0.3s; }
 .skill-meta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 4px 10px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     border-radius: 8px;
-    border: 1px solid rgba(0, 212, 255, 0.18);
-    background: rgba(0, 102, 255, 0.08);
-    color: var(--cyan-accent);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--primary-light);
     font-family: var(--font-mono);
     font-size: 0.64rem;
     letter-spacing: 0;
     text-transform: uppercase;
 }
-.skill-card:hover .skill-icon { color: var(--cyan-accent); transform: scale(1.15); }
-.skill-card h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; min-height: 2.6em; display: flex; align-items: center; justify-content: center; overflow-wrap: anywhere; }
-.skill-bar { width: 100%; height: 3px; background: rgba(255,255,255,0.04); border-radius: 3px; overflow: hidden; }
-.skill-fill { height: 100%; width: 0; background: var(--gradient-primary); border-radius: 3px; transition: width 1.5s var(--ease-out); }
-.skill-card.animated .skill-fill { width: var(--fill); }
+.skill-card h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 0; min-height: 2.6em; display: flex; align-items: center; justify-content: center; overflow-wrap: anywhere; }
 .skills-actions {
     display: flex;
     justify-content: center;
