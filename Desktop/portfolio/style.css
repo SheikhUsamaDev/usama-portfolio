@@ -383,13 +383,12 @@ textarea:focus-visible,
     transform-style: preserve-3d;
 }
 
-/* Aurora Orbs */
+/* Aurora Orbs — animated float */
 .aurora-orb {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
     opacity: 0;
-    animation: auroraFadeIn 2s 1.2s ease forwards;
 }
 .aurora-orb-1 {
     width: 500px;
@@ -398,6 +397,7 @@ textarea:focus-visible,
     left: -100px;
     background: radial-gradient(circle, rgba(99, 102, 241, 0.28), transparent 70%);
     filter: blur(120px);
+    animation: orb1Float 22s ease-in-out infinite;
 }
 .aurora-orb-2 {
     width: 400px;
@@ -406,19 +406,37 @@ textarea:focus-visible,
     right: -80px;
     background: radial-gradient(circle, rgba(6, 182, 212, 0.22), transparent 70%);
     filter: blur(100px);
+    animation: orb2Float 28s ease-in-out infinite 0.5s;
 }
 .aurora-orb-3 {
     width: 300px;
     height: 300px;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
     background: radial-gradient(circle, rgba(167, 139, 250, 0.14), transparent 70%);
     filter: blur(140px);
+    animation: orb3Float 19s ease-in-out infinite 1s;
 }
-@keyframes auroraFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes orb1Float {
+    0%   { opacity: 0;    transform: translate(0, 0) scale(1); }
+    8%   { opacity: 0.28; }
+    32%  { opacity: 0.22; transform: translate(70px, -55px) scale(1.14); }
+    65%  { opacity: 0.30; transform: translate(-35px, 65px) scale(0.90); }
+    100% { opacity: 0.28; transform: translate(0, 0) scale(1); }
+}
+@keyframes orb2Float {
+    0%   { opacity: 0;    transform: translate(0, 0) scale(1); }
+    8%   { opacity: 0.22; }
+    40%  { opacity: 0.17; transform: translate(-65px, -50px) scale(1.20); }
+    78%  { opacity: 0.26; transform: translate(45px, 35px) scale(0.87); }
+    100% { opacity: 0.22; transform: translate(0, 0) scale(1); }
+}
+@keyframes orb3Float {
+    0%   { opacity: 0;    transform: translate(-50%, -50%) scale(1); }
+    8%   { opacity: 0.14; }
+    38%  { opacity: 0.18; transform: translate(calc(-50% + 45px), calc(-50% + 45px)) scale(1.16); }
+    75%  { opacity: 0.09; transform: translate(calc(-50% - 40px), calc(-50% - 32px)) scale(0.84); }
+    100% { opacity: 0.14; transform: translate(-50%, -50%) scale(1); }
 }
 
 .hero-content {
@@ -1447,6 +1465,58 @@ textarea:focus-visible,
 }
 
 /* ============ REDUCED MOTION ============ */
+/* ============ SCROLL PROGRESS BAR ============ */
+#scroll-progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--gradient-primary);
+    z-index: 10001;
+    pointer-events: none;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.7);
+    transition: width 0.08s linear;
+}
+
+/* ============ BUTTON BEAM SHIMMER ============ */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -120%;
+    width: 55%;
+    height: 220%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+    transform: skewX(-18deg);
+    animation: btnBeam 4s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes btnBeam {
+    0%, 60% { left: -120%; }
+    100% { left: 180%; }
+}
+
+/* ============ SECTION LINE PULSE ============ */
+@keyframes linePulse {
+    0%, 100% { width: 50px; opacity: 1; box-shadow: 0 0 0px transparent; }
+    50% { width: 72px; opacity: 0.7; box-shadow: 0 0 12px rgba(99, 102, 241, 0.5); }
+}
+.section-line {
+    animation: linePulse 5s ease-in-out infinite;
+}
+
+/* ============ CARD SPOTLIGHT ============ */
+.card-spotlight {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle 180px at var(--sx, 50%) var(--sy, 50%), rgba(99, 102, 241, 0.10), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+    z-index: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;

@@ -666,3 +666,30 @@ function initBackToTop() {
     });
 })();
 
+// ============ SCROLL PROGRESS BAR ============
+(function initScrollProgress() {
+    const bar = document.getElementById('scroll-progress');
+    if (!bar) return;
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        bar.style.width = Math.min(scrolled * 100, 100) + '%';
+    }, { passive: true });
+})();
+
+// ============ CARD SPOTLIGHT ============
+(function initCardSpotlight() {
+    if (window.innerWidth <= 768) return;
+    document.querySelectorAll('.skill-card, .service-card, .timeline-card, .contact-card').forEach(card => {
+        const spot = document.createElement('div');
+        spot.className = 'card-spotlight';
+        card.appendChild(spot);
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            spot.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+            spot.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+            spot.style.opacity = '1';
+        });
+        card.addEventListener('mouseleave', () => { spot.style.opacity = '0'; });
+    });
+})();
+
