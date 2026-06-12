@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Microsoft Purview compliance workflow project</title>
+  <desc id="desc">Compliance report interface with policy checks and retention tasks.</desc>
+  <rect width="800" height="450" fill="#071016"/>
+  <rect x="58" y="60" width="684" height="330" rx="14" fill="#101923" stroke="#2a4050"/>
+  <rect x="96" y="104" width="250" height="244" rx="12" fill="#0a1219" stroke="#263846"/>
+  <g fill="none" stroke-linecap="round" stroke-width="9"><path d="M126 154l22 22 44-54" stroke="#35d0c2"/><path d="M126 226l22 22 44-54" stroke="#35d0c2"/><path d="M126 298l22 22 44-54" stroke="#35d0c2"/></g>
+  <path d="M390 140h250M390 202h210M390 264h236M390 326h170" stroke="#1b2d39" stroke-width="22" stroke-linecap="round"/>
+  <text x="390" y="108" fill="#f5b84b" font-family="Inter, Arial" font-size="24" font-weight="700">Purview Compliance</text>
+</svg>

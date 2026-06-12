@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">CRM lead automation project</title>
+  <desc id="desc">CRM pipeline mockup with lead cards moving through automated stages.</desc>
+  <rect width="800" height="450" fill="#060b11"/>
+  <rect x="50" y="62" width="700" height="326" rx="14" fill="#101923" stroke="#2a4050"/>
+  <g fill="#0a1219" stroke="#263846"><rect x="82" y="112" width="150" height="230" rx="10"/><rect x="252" y="112" width="150" height="230" rx="10"/><rect x="422" y="112" width="150" height="230" rx="10"/><rect x="592" y="112" width="126" height="230" rx="10"/></g>
+  <g fill="#1b2d39"><rect x="104" y="154" width="106" height="46" rx="8"/><rect x="274" y="202" width="106" height="46" rx="8"/><rect x="444" y="154" width="106" height="46" rx="8"/><rect x="614" y="246" width="82" height="46" rx="8"/></g>
+  <g fill="none" stroke="#35d0c2" stroke-width="5" stroke-linecap="round"><path d="M210 177h52"/><path d="M380 225h52"/><path d="M550 177h52"/></g>
+  <text x="102" y="96" fill="#35d0c2" font-family="Inter, Arial" font-size="18">New Lead</text><text x="272" y="96" fill="#35d0c2" font-family="Inter, Arial" font-size="18">Qualified</text><text x="442" y="96" fill="#35d0c2" font-family="Inter, Arial" font-size="18">Follow Up</text><text x="612" y="96" fill="#35d0c2" font-family="Inter, Arial" font-size="18">Won</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Server hardening project</title>
+  <desc id="desc">Server security dashboard with firewall, SSL, backups, and uptime checks.</desc>
+  <rect width="800" height="450" fill="#060b11"/>
+  <rect x="70" y="74" width="660" height="302" rx="14" fill="#101923" stroke="#2a4050"/>
+  <rect x="110" y="122" width="220" height="206" rx="12" fill="#0a1219" stroke="#263846"/>
+  <path d="M400 122h248M400 178h198M400 234h226M400 290h160" stroke="#1b2d39" stroke-width="24" stroke-linecap="round"/>
+  <path d="M174 166l48-28 48 28v70c0 48-48 76-48 76s-48-28-48-76z" fill="#162735" stroke="#35d0c2" stroke-width="8"/>
+  <path d="M204 226l20 20 42-52" fill="none" stroke="#f5b84b" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="350" fill="#f3f6f8" font-family="Inter, Arial" font-size="24" font-weight="700">Firewall / SSL / Backups</text>
+</svg>

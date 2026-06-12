@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">n8n automation server project</title>
+  <desc id="desc">Self-hosted automation server architecture with n8n, Docker, Redis, and Postgres.</desc>
+  <rect width="800" height="450" fill="#071016"/>
+  <rect x="58" y="70" width="684" height="310" rx="14" fill="#101923" stroke="#2a4050"/>
+  <g fill="#0a1219" stroke="#31414c" stroke-width="2"><rect x="108" y="144" width="128" height="80" rx="10"/><rect x="336" y="84" width="128" height="80" rx="10"/><rect x="336" y="286" width="128" height="80" rx="10"/><rect x="564" y="144" width="128" height="80" rx="10"/></g>
+  <g fill="none" stroke="#35d0c2" stroke-width="6" stroke-linecap="round"><path d="M236 184h100"/><path d="M400 164v122"/><path d="M464 184h100"/></g>
+  <text x="139" y="194" fill="#f3f6f8" font-family="Inter, Arial" font-size="24" font-weight="700">n8n</text>
+  <text x="366" y="134" fill="#8fb4ff" font-family="Inter, Arial" font-size="22" font-weight="700">Redis</text>
+  <text x="360" y="336" fill="#f5b84b" font-family="Inter, Arial" font-size="22" font-weight="700">DB</text>
+  <text x="589" y="194" fill="#35d0c2" font-family="Inter, Arial" font-size="22" font-weight="700">Docker</text>
+</svg>

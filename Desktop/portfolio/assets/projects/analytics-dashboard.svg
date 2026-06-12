@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Operations analytics dashboard project</title>
+  <desc id="desc">Dashboard mockup with metrics, chart cards, and automation health status.</desc>
+  <rect width="800" height="450" fill="#060b11"/>
+  <rect x="44" y="48" width="712" height="354" rx="14" fill="#101923" stroke="#2a4050"/>
+  <g fill="#0a1219" stroke="#263846"><rect x="78" y="86" width="150" height="86" rx="10"/><rect x="250" y="86" width="150" height="86" rx="10"/><rect x="422" y="86" width="150" height="86" rx="10"/><rect x="594" y="86" width="128" height="86" rx="10"/></g>
+  <rect x="78" y="214" width="310" height="142" rx="12" fill="#0a1219" stroke="#263846"/>
+  <rect x="426" y="214" width="296" height="142" rx="12" fill="#0a1219" stroke="#263846"/>
+  <path d="M110 322c48-90 92 34 138-48 40-72 78 8 114-30" fill="none" stroke="#35d0c2" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="574" cy="285" r="54" fill="none" stroke="#263846" stroke-width="18"/><path d="M574 231a54 54 0 0 1 50 75" fill="none" stroke="#f5b84b" stroke-width="18" stroke-linecap="round"/>
+  <text x="104" y="138" fill="#f3f6f8" font-family="Inter, Arial" font-size="30" font-weight="700">98%</text><text x="276" y="138" fill="#f3f6f8" font-family="Inter, Arial" font-size="30" font-weight="700">42</text><text x="448" y="138" fill="#f3f6f8" font-family="Inter, Arial" font-size="30" font-weight="700">12k</text><text x="620" y="138" fill="#f3f6f8" font-family="Inter, Arial" font-size="30" font-weight="700">24/7</text>
+</svg>

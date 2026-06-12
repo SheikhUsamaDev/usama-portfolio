@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">E-commerce dashboard project</title>
+  <desc id="desc">Dark interface mockup with product cards, order chart, and checkout panel.</desc>
+  <rect width="800" height="450" fill="#071016"/>
+  <rect x="42" y="44" width="716" height="362" rx="14" fill="#101923" stroke="#2a4050"/>
+  <rect x="70" y="78" width="180" height="292" rx="10" fill="#0a1219" stroke="#263846"/>
+  <rect x="286" y="78" width="230" height="132" rx="10" fill="#0a1219" stroke="#263846"/>
+  <rect x="540" y="78" width="188" height="292" rx="10" fill="#0a1219" stroke="#263846"/>
+  <path d="M312 168c32-46 70-16 92-52 22 38 54 14 86 52" fill="none" stroke="#35d0c2" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#3d7cff"><rect x="95" y="115" width="128" height="18" rx="9"/><rect x="95" y="162" width="128" height="18" rx="9"/><rect x="95" y="209" width="128" height="18" rx="9"/></g>
+  <g fill="#f5b84b"><circle cx="612" cy="142" r="28"/><circle cx="664" cy="142" r="28"/><circle cx="612" cy="216" r="28"/><circle cx="664" cy="216" r="28"/></g>
+  <rect x="304" y="252" width="180" height="30" rx="15" fill="#1b2d39"/><rect x="304" y="306" width="150" height="30" rx="15" fill="#1b2d39"/>
+  <text x="70" y="390" fill="#f3f6f8" font-family="Inter, Arial" font-size="26" font-weight="700">E-Commerce Platform</text>
+</svg>

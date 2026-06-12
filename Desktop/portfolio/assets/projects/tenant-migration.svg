@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Tenant migration runbook project</title>
+  <desc id="desc">Migration timeline from source tenant to target tenant with cutover checks.</desc>
+  <rect width="800" height="450" fill="#071016"/>
+  <rect x="70" y="90" width="220" height="250" rx="14" fill="#101923" stroke="#31414c"/>
+  <rect x="510" y="90" width="220" height="250" rx="14" fill="#101923" stroke="#31414c"/>
+  <path d="M318 182h136l-28-28M454 268H318l28 28" fill="none" stroke="#35d0c2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#1b2d39"><rect x="106" y="138" width="148" height="26" rx="13"/><rect x="106" y="194" width="148" height="26" rx="13"/><rect x="106" y="250" width="148" height="26" rx="13"/><rect x="546" y="138" width="148" height="26" rx="13"/><rect x="546" y="194" width="148" height="26" rx="13"/><rect x="546" y="250" width="148" height="26" rx="13"/></g>
+  <text x="104" y="374" fill="#f3f6f8" font-family="Inter, Arial" font-size="24" font-weight="700">Source Tenant</text>
+  <text x="542" y="374" fill="#f3f6f8" font-family="Inter, Arial" font-size="24" font-weight="700">Target Tenant</text>
+  <text x="324" y="392" fill="#f5b84b" font-family="Inter, Arial" font-size="20" font-weight="700">Cutover Plan</text>
+</svg>

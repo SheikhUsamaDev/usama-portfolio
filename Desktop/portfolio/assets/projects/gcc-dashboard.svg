@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">Microsoft 365 GCC High dashboard project</title>
+  <desc id="desc">Security dashboard mockup with tenant health panels and alerts.</desc>
+  <rect width="800" height="450" fill="#060b11"/>
+  <rect x="44" y="46" width="712" height="358" rx="14" fill="#101820" stroke="#31414c"/>
+  <rect x="78" y="88" width="180" height="76" rx="10" fill="#13212c"/><rect x="286" y="88" width="180" height="76" rx="10" fill="#13212c"/><rect x="494" y="88" width="180" height="76" rx="10" fill="#13212c"/>
+  <path d="M118 270h104M118 306h158M118 342h126" stroke="#8fb4ff" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="386" cy="306" r="72" fill="none" stroke="#263846" stroke-width="20"/><path d="M386 234a72 72 0 0 1 66 102" fill="none" stroke="#35d0c2" stroke-width="20" stroke-linecap="round"/>
+  <path d="M588 248l44 28 44-28v82c0 44-44 68-44 68s-44-24-44-68z" fill="#162735" stroke="#f5b84b" stroke-width="8"/>
+  <text x="102" y="134" fill="#35d0c2" font-family="Inter, Arial" font-size="24" font-weight="700">Entra ID</text>
+  <text x="310" y="134" fill="#35d0c2" font-family="Inter, Arial" font-size="24" font-weight="700">Exchange</text>
+  <text x="518" y="134" fill="#35d0c2" font-family="Inter, Arial" font-size="24" font-weight="700">GCC High</text>
+</svg>
