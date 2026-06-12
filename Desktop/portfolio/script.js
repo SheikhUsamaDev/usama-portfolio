@@ -3,6 +3,14 @@
    Three.js + GSAP + Lenis | Film Effects
    ============================================= */
 
+// Pre-hide hero elements immediately to prevent flash before animation
+gsap.set([
+    '.hero-badge', '.char-reveal', '.char-reveal-name',
+    '.role-typewriter', '.hero-description',
+    '.hero-cta .btn', '.stat-item',
+    '.hero-scroll-indicator', '.hero-socials .social-link'
+], { opacity: 0 });
+
 // ============ LENIS SMOOTH SCROLL ============
 let lenis;
 try {
