@@ -1065,8 +1065,7 @@ textarea:focus-visible,
     transform-style: preserve-3d;
 }
 .project-card-cinema {
-    min-width: 380px;
-    max-width: 420px;
+    width: clamp(300px, 28vw, 440px);
     background: var(--gradient-surface), var(--bg-glass);
     border: 1px solid var(--border-color);
     border-radius: var(--card-radius);
@@ -1334,7 +1333,7 @@ textarea:focus-visible,
     .about-image-wrapper { order: -1; }
     .about-floating-card { display: none; }
     .contact-grid { grid-template-columns: 1fr; }
-    .project-card-cinema { min-width: 340px; }
+    .project-card-cinema { width: clamp(280px, 60vw, 380px); }
     .hero-title { font-size: 4rem; }
 }
 
