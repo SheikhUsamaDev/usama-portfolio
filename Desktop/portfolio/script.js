@@ -469,144 +469,18 @@ function initScrollAnimations() {
     });
 }
 
-// ============ TRUE DEPTH MOTION ============
+// ============ SCROLL REVEAL ============
 function initDepthMotion() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth <= 1024) return;
-
-    const depthScenes = [
-        { trigger: '#hero', target: '.hero-content', from: { z: 0, rotateX: 0, y: 0 }, to: { z: 180, rotateX: 10, y: -80 }, scrub: 1.2 },
-        { trigger: '#about', target: '#about .depth-stage', from: { z: -120, rotateX: 10, y: 70 }, to: { z: 120, rotateX: -5, y: -30 }, scrub: 1.1 },
-        { trigger: '#skills', target: '#skills .depth-stage', from: { z: -140, rotateX: 12, y: 90 }, to: { z: 110, rotateX: -4, y: -40 }, scrub: 1.1 },
-        { trigger: '#services', target: '#services .depth-stage', from: { z: -150, rotateX: 11, y: 80 }, to: { z: 140, rotateX: -6, y: -35 }, scrub: 1.15 },
-        { trigger: '#projects', target: '#projects .depth-stage', from: { z: -200, rotateX: 12, y: 110 }, to: { z: 130, rotateX: -5, y: -30 }, scrub: 1.2 },
-        { trigger: '#experience', target: '#experience .depth-stage', from: { z: -120, rotateX: 10, y: 80 }, to: { z: 100, rotateX: -4, y: -25 }, scrub: 1.1 },
-        { trigger: '#contact', target: '#contact .depth-stage', from: { z: -100, rotateX: 8, y: 70 }, to: { z: 110, rotateX: -3, y: -20 }, scrub: 1.05 },
-    ];
-
-    depthScenes.forEach(scene => {
-        const target = document.querySelector(scene.target);
-        if (!target) return;
-
-        gsap.fromTo(target, scene.from, {
-            ...scene.to,
-            ease: 'none',
-            force3D: true,
-            transformPerspective: 1400,
-            scrollTrigger: {
-                trigger: scene.trigger,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: scene.scrub,
-            },
-        });
-    });
-
-    document.querySelectorAll('.cinematic-section, #hero').forEach(section => {
-        const planeA = section.querySelector('.depth-plane-a');
-        const planeB = section.querySelector('.depth-plane-b');
-        const header = section.querySelector('.section-header');
-
-        if (planeA) {
-            gsap.fromTo(planeA, {
-                xPercent: -12,
-                yPercent: 6,
-                z: -280,
-                rotateZ: -10,
-            }, {
-                xPercent: 18,
-                yPercent: -10,
-                z: 80,
-                rotateZ: 8,
-                ease: 'none',
-                force3D: true,
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1.6,
-                },
-            });
-        }
-
-        if (planeB) {
-            gsap.fromTo(planeB, {
-                xPercent: 10,
-                yPercent: -4,
-                z: -340,
-                rotateZ: 18,
-            }, {
-                xPercent: -16,
-                yPercent: 12,
-                z: 60,
-                rotateZ: -10,
-                ease: 'none',
-                force3D: true,
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: 1.8,
-                },
-            });
-        }
-
-        if (header) {
-            gsap.fromTo(header, {
-                z: -40,
-                y: 60,
-                rotateX: 14,
-            }, {
-                z: 90,
-                y: -10,
-                rotateX: 0,
-                ease: 'none',
-                force3D: true,
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 90%',
-                    end: 'top 20%',
-                    scrub: 1,
-                },
-            });
-        }
-    });
-
-    const pointerStages = document.querySelectorAll('.depth-stage, .hero-content');
-    pointerStages.forEach(stage => {
-        const quickX = gsap.quickTo(stage, 'rotationY', { duration: 0.6, ease: 'power3.out' });
-        const quickY = gsap.quickTo(stage, 'rotationX', { duration: 0.6, ease: 'power3.out' });
-        const quickZ = gsap.quickTo(stage, 'z', { duration: 0.8, ease: 'power3.out' });
-
-        stage.addEventListener('mousemove', e => {
-            if (window.innerWidth <= 768) return;
-            const rect = stage.getBoundingClientRect();
-            const px = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-            const py = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-            quickX(px * 5);
-            quickY(py * -5);
-            quickZ(60);
-        });
-
-        stage.addEventListener('mouseleave', () => {
-            quickX(0);
-            quickY(0);
-            quickZ(0);
-        });
-    });
-
     gsap.utils.toArray('.skill-card, .timeline-card, .contact-card').forEach((card, i) => {
         gsap.fromTo(card, {
-            z: -60,
-            y: 26,
-            opacity: 0.35,
+            y: 30,
+            opacity: 0,
         }, {
-            z: 0,
             y: 0,
             opacity: 1,
-            duration: 0.8,
+            duration: 0.6,
             ease: 'power3.out',
             delay: i * 0.02,
-            force3D: true,
             scrollTrigger: {
                 trigger: card,
                 start: 'top 88%',
@@ -792,18 +666,3 @@ function initBackToTop() {
     });
 })();
 
-// ============ TILT ON CARDS ============
-(function initTilt() {
-    if (window.innerWidth <= 768) return;
-    document.querySelectorAll('.service-card, .project-card-cinema').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const r = card.getBoundingClientRect();
-            const x = (e.clientX - r.left) / r.width;
-            const y = (e.clientY - r.top) / r.height;
-            gsap.to(card, { rotateX: (0.5-y)*8, rotateY: (x-0.5)*8, transformPerspective: 1000, duration: 0.3 });
-        });
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6, ease: 'power3.out' });
-        });
-    });
-})();
