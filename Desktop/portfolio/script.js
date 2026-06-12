@@ -3,14 +3,6 @@
    Three.js + GSAP + Lenis | Film Effects
    ============================================= */
 
-// Pre-hide hero elements immediately to prevent flash before animation
-gsap.set([
-    '.hero-badge', '.char-reveal', '.char-reveal-name',
-    '.role-typewriter', '.hero-description',
-    '.hero-cta .btn', '.stat-item',
-    '.hero-scroll-indicator', '.hero-socials .social-link'
-], { opacity: 0 });
-
 // ============ LENIS SMOOTH SCROLL ============
 let lenis;
 try {
@@ -327,21 +319,32 @@ try {
 function initHeroAnimation() {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+    // Set initial states synchronously before any frame renders
+    gsap.set('.hero-badge', { opacity: 0, y: 30 });
+    gsap.set('.char-reveal', { opacity: 0, y: 40 });
+    gsap.set('.char-reveal-name', { opacity: 0, y: 80, rotationX: 90, transformOrigin: 'bottom center' });
+    gsap.set('.role-typewriter', { opacity: 0, y: 20 });
+    gsap.set('.hero-description', { opacity: 0, y: 25 });
+    gsap.set('.hero-cta .btn', { opacity: 0, y: 25 });
+    gsap.set('.stat-item', { opacity: 0, y: 25 });
+    gsap.set('.hero-scroll-indicator', { opacity: 0, y: 15 });
+    gsap.set('.hero-socials .social-link', { opacity: 0, x: -15 });
+
     const tl = gsap.timeline({ delay: 0.1 });
 
     tl
-        .from('.hero-badge', { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' })
-        .from('.char-reveal', { opacity: 0, y: 40, duration: 1, ease: 'power3.out' }, '-=0.4')
-        .from('.char-reveal-name', {
-            opacity: 0, y: 80, rotationX: 90, duration: 1,
-            ease: 'power4.out', stagger: 0.08, transformOrigin: 'bottom center'
+        .to('.hero-badge', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+        .to('.char-reveal', { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.4')
+        .to('.char-reveal-name', {
+            opacity: 1, y: 0, rotationX: 0, duration: 1,
+            ease: 'power4.out', stagger: 0.08
         }, '-=0.6')
-        .from('.role-typewriter', { opacity: 0, y: 20, duration: 0.7, ease: 'power3.out' }, '-=0.4')
-        .from('.hero-description', { opacity: 0, y: 25, duration: 0.7, ease: 'power3.out' }, '-=0.3')
-        .from('.hero-cta .btn', { opacity: 0, y: 25, duration: 0.6, stagger: 0.1, ease: 'power3.out' }, '-=0.3')
-        .from('.stat-item', { opacity: 0, y: 25, duration: 0.5, stagger: 0.1, ease: 'power3.out' }, '-=0.2')
-        .from('.hero-scroll-indicator', { opacity: 0, y: 15, duration: 0.5, ease: 'power3.out' }, '-=0.2')
-        .from('.hero-socials .social-link', { opacity: 0, x: -15, duration: 0.4, stagger: 0.08, ease: 'power3.out' }, '-=0.3');
+        .to('.role-typewriter', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.4')
+        .to('.hero-description', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.3')
+        .to('.hero-cta .btn', { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out' }, '-=0.3')
+        .to('.stat-item', { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power3.out' }, '-=0.2')
+        .to('.hero-scroll-indicator', { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, '-=0.2')
+        .to('.hero-socials .social-link', { opacity: 1, x: 0, duration: 0.4, stagger: 0.08, ease: 'power3.out' }, '-=0.3');
 
     // Counter animation
     document.querySelectorAll('.stat-number').forEach(counter => {
